@@ -1,0 +1,14 @@
+{% for font in font_list %}
+    <div class="card m-auto">
+        <div class="card-body text-center">
+            <h2 class="card-title text-center">{{ font.family }}</h2>
+            {% if font.style %}
+                <p class="small" style="color:#6c757d">{{ font.style }}</p>
+            {% endif %}
+            <p>{{ font.url|truncatechars:100 }}</p>
+            <a href="{{ font.url }}" class="btn btn-primary">Download from source</a>
+        </div>
+    </div>
+{% empty %}
+    <h2 class="text-center" style="margin: 20px;">No fonts available</h2>
+{% endfor %}

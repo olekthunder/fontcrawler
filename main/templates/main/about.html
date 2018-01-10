@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-12">
+            <h1>What is fontcrawler?</h1>
+            <p class="lead">FontCrawler is a web application allows you to fetch fonts from other sites</p><br>
+            <h1>How to use it?</h1>
+            <p class="lead">
+                <a href="{% url 'accounts:check-auth' %}">log in</a> and come to
+                <a href="{% url 'home' %}">home page</a>. Form for requests should appear.
+                <br>
+                Then, enter page's link you want to parse and press "Get Fonts" button.
+                <br>
+                Now, go to your profile to "User Fonts" tab and do whatever you want with those fonts :)
+            </p>
+            <br>
+            <h1>Want to contribute?</h1>
+            <p class="lead">
+                Visit my page at <a href="https://github.com/olekthunder">github.com</a>
+            </p>
+        </div>
+
+    </div>
+{% endblock %}

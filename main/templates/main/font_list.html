@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="text-center" style="margin: 20px; margin-left: 0;">Latest parsed fonts:</h1>
+    <div class="general-font-list">
+        {% include 'main/font_cards.html' %}
+    </div>
+    {% include 'main/pagination.html' %}
+{% endblock %}

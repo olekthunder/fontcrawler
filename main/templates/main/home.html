@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% load bootstrap4 %}
+
+{% block content %}
+    <h1 style="margin: 20px; margin-left: 0;">Welcome to the fontcrawler tool!</h1>
+    <p class="lead">How can something so small as font, be such a big deal for designers?
+        A font does everything from representing the brand, to increasing legibility.</p>
+    <p class="lead">Here you can fetch information about fonts used on particular pages</p>
+    {% if form %}
+        <div class="home-form">
+            <form action="{% url 'home' %}" method="post">
+                {% csrf_token %}
+                {% for field in form %}
+                    {% bootstrap_field field layout='inline' %}
+                {% endfor %}
+                {% bootstrap_button 'Get Fonts!' button_type='submit' button_class='btn btn-primary' %}
+            </form>
+        </div>
+    {% else %}
+        <p class="lead">Just <a href="{% url 'accounts:check-auth' %}">log in</a> and get back there</p>
+    {% endif %}
+{% endblock %}

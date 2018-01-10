@@ -1,0 +1,16 @@
+<div class="logo text-center">Font Crawler</div>
+    <nav class="navbar navbar-expand-md navbar-dark">
+        <div class="container-fluid  justify-content-end">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav text-center">
+                <li class="nav-item"><a href="{% url 'home' %}" class="nav-link">Main</a></li>
+                <li class="nav-item"><a href="{% url 'fonts' %}" class="nav-link">Fonts</a></li>
+                <li class="nav-item"><a href="{% url 'accounts:check-auth' %}" class="nav-link">Profile</a></li>
+                <li class="nav-item"><a href="{% url 'about' %}" class="nav-link">About</a></li>
+            </ul>
+        </div>
+        </div>
+    </nav>

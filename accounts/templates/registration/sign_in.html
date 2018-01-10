@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load bootstrap4 %}
+
+{% block content %}
+  <div class="card card-container">
+            <img id="profile-img" class="profile-img-card" src="{% static 'main/img/avatar_2x.png' %}" />
+            <form class="account-form" method="post" action="{% url 'accounts:sign_in' %}">
+                {% csrf_token %}
+                {% for field in form %}
+                    {% bootstrap_field field layout='inline' %}
+                {% endfor %}
+                {% bootstrap_button "Sign in" button_type="submit" button_class="btn btn-primary" %}
+            </form>
+            <a href="{% url 'accounts:sign_up' %}" class="form-prompt">
+                Sign up?
+            </a>
+        </div>
+{% endblock %}

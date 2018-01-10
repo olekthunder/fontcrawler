@@ -1,0 +1,19 @@
+First, check rabbitmq-server status
+Then, chech psql status
+
+Venv:
+$ source venv/bin/activate
+
+After that run:
+
+(Starting workers)
+(venv) $ celery -A fontcrawler worker -l info
+
+(starting flower)
+(venv) $ flower -A fontcrawler
+
+(Sass watcher)
+(venv) $ sass --watch sass/style.sass:style.css
+
+(Dev server)
+(venv) $ python manage.py runserver
