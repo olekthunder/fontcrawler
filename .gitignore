@@ -118,3 +118,4 @@ venv.bak/
 
 # Sass
 *.sass-cache/
+fontcrawler/project_settings/local.py
