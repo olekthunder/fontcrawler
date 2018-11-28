@@ -1,1 +1,2 @@
-from .project_settings.local import *
+from .project_settings import *
+
