@@ -2,6 +2,9 @@ version: "3"
 services:
   db:
     image: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+
   web:
     build: .
     command: bash -c "sleep 2;python3 manage.py migrate && python3 manage.py runserver 0.0.0.0:8000"
@@ -11,4 +14,24 @@ services:
       - "8000:8000"
     depends_on:
       - db
+      - rabbitmq
 
+  rabbitmq:
+    image: rabbitmq:latest
+    ports:
+      - "5672:5672"
+    environment:
+      RABBITMQ_DEFAULT_USER: rabbitmq
+      RABBITMQ_DEFAULT_PASS: rabbitmq
+
+  celery:
+    build: .
+    command: celery -A fontcrawler worker -l info
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+      - rabbitmq
+
+volumes:
+  postgres_data:
