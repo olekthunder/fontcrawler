@@ -1,15 +1,17 @@
 # FontCrawler
 
-### What is this project?
+## What is this project?
 
 Almost every website uses custom fonts to enchance text on their webpages.
 
 FontCrawler is a web app that allows you to get those fonts and download them
 
-### Prerequisites
+### Prerequisites (Or use Docker)
 
 - [Python 3.4](https://www.python.org/downloads/) or higher
-- [Django 2.0](https://docs.djangoproject.com/en/dev/topics/install/) or higher
+- [Rabbitmq](https://www.rabbitmq.com/download.html)
+- [Postgresql](https://www.postgresql.org/download/)
+
 
 ### Configuration
 
